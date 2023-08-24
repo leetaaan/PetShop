@@ -3,50 +3,59 @@ import React, { useRef, useEffect } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import './header.css'
 
-import { motion } from 'framer-motion'
+import { motion } from "framer-motion";
 
-import logo from '../../assets/images/eco-logo.png'
-import userIcon from '../../assets/images/user-icon.png'
-
-import { Container, Row } from 'reactstrap'
-import { useSelector } from 'react-redux'
+import logo from "../../assets/images/eco-logo.png";
+import userIcon from "../../assets/images/user-icon.png";
+import { useSelector } from 'react-redux';
+import { Container, Row } from "reactstrap";
 
 const nav__links = [
   {
-    path: 'home',
-    display: 'Home',
+    path: "home",
+    display: "Home",
   },
   {
-    path: 'shop',
-    display: 'Shop',
+    path: "shop",
+    display: "Shop",
   },
   {
-    path: 'cart',
-    display: 'Cart',
+    path: "cart",
+    display: "Cart",
   },
-]
+];
 const Header = () => {
+
   const headerRef = useRef(null)
   const totalQuantity = useSelector(state => state.cart.totalQuantity)
 
   const menuRef = useRef(null)
-  const navigate=useNavigate()
+  const navigate = useNavigate()
 
-  //const stickyHeaderFunc = () => {
-    //window.addEventListener("scroll", () => {
-      //if (
-        //document.body.scrollTop > 80 ||
-        //document.documentElement.scrollTop > 80) {
-        //headerRef.current.classList.add("stick__header");
-      //} else {
-        //headerRef.current.classList.remove("stick__header");
-      //}
-    //});
-  //};
+  const stickyHeaderFunc = () => {
+    window.addEventListener("scroll", () => {
+      if (
+        document.body.scrollTop > 80 ||
+        document.documentElement.scrollTop > 80
+      ) {
+        headerRef.current.classList.add("sticky__header");
+      } else {
+        headerRef.current.classList.remove("sticky__header");
+      }
+    });
+  };
+  useEffect(() => {
+    stickyHeaderFunc();
+
+    return () => window.removeEventListener("scroll", stickyHeaderFunc);
+  });
+
+  const menuToggle = () => menuRef.current.classList.toggle('active__menu')
   const navigateToCart = () => {
     navigate("/cart")
   }
-  return <header className="header">
+  return ( 
+  <header className="header">
     <Container>
       <Row>
         <div className="nav__wrapper">
@@ -57,7 +66,7 @@ const Header = () => {
             </div>
           </div>
           {/* navigation */}
-          <div className='navigation'>
+          <div className='navigation' ref={menuRef} onClick={menuToggle}>
             <ul className="menu">
               {
                 nav__links.map((item, index) => (
@@ -81,17 +90,21 @@ const Header = () => {
             </span>
 
             <span>
-              <motion.img whileTap={{ scale: 1.2 }} src={userIcon} alt="" className="" />
+              <motion.img
+                whileTap={{ scale: 1.2 }}
+                src={userIcon} alt="" className="" />
             </span>
           </div>
           {/* mobile__menu */}
           <div className="mobile__menu">
-            <span><i class="ri-menu-line"></i></span>
+            <span onClick={menuToggle}>
+              <i class="ri-menu-line"></i>
+            </span>
           </div>
         </div>
       </Row>
     </Container>
   </header>
-}
-
-export default Header
+  );
+};
+export default Header;
