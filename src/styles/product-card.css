@@ -1,5 +1,5 @@
 .product__item {
-    curson: pointer;
+    cursor: pointer;
 }
 
 .product__info h3 a{

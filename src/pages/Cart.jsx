@@ -10,17 +10,18 @@ import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 const Cart = () => {
-  const cartItem = useSelector(state => state.cart.cartItem)
-  const totalAmount=useSelector(state=>state.cart.totalAmount)
+  const cartItems = useSelector((state) => state.cart.cartItems)
+  const totalAmount= useSelector((state) => state.cart.totalAmount)
+  
   return (
-    <Helmet>
+    <Helmet title="Cart">
       <CommonSection title="Shopping Cart" />
       <section>
         <Container>
           <Row>
             <Col lg='9'>
               {
-                cartItem.length === 0 ? (
+                cartItems.length === 0 ? (
                   <h2 className='fs-4 text-center'>Khong co san pham nao duoc them vao gio</h2>
                 ) : (
                   <table className='table bordered'>
@@ -33,11 +34,11 @@ const Cart = () => {
                         <th>Delete</th>
                       </tr>
                     </thead>
+
                     <tbody>
-                      {
-                        cartItem.map((item, index) => (
+                      { cartItems.map((item, index) => (
                           <Tr item={item} key={index} />
-                        ))}
+                        ))}             
                     </tbody>
                   </table>
                 )}
@@ -46,11 +47,11 @@ const Cart = () => {
               <div>
                 <h6 className='d-flex align-items-center justify-content-between'>
                   Subtotal
-                  <span className='fs-4 fw-bold'>${totalAmount}</span></h6>
+                  <span className='fs-4 fw-bold'>$ {totalAmount}</span></h6>
               </div>
               <p className='fs-6 mt-2'>taxes and shipping will calculate in checkout</p>
               <div>
-              <button className="buy__btn w-100"><Link to='/checkoout'>checkoout</Link></button>
+              <button className="buy__btn w-100"><Link to='/checkout'>checkout</Link></button>
               <button className="buy__btn w-100 mt-3"><Link to='/shop'>Continue Shopping</Link></button>
               </div>
             </Col>
