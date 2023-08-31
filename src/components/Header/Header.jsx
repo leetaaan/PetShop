@@ -127,7 +127,7 @@ const Header = () => {
                   ref={profileActionRef} onClick={toggleProfileActions}>
                   {
                     currentUser ? (<span onClick={logout}>Đăng xuất</span> ):(
-                      <div className=" align-items-center justify-content-center flex-row">
+                      <div className="flex-row">
                         <Link to='/signup'>Đăng ký</Link>
                         <p></p>
                         <Link to='/login'>Đăng nhập</Link>
