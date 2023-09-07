@@ -131,6 +131,8 @@ const Header = () => {
                         <Link to='/signup'>Đăng ký</Link>
                         <p></p>
                         <Link to='/login'>Đăng nhập</Link>
+                        <p></p>
+                        <Link to='/login'>Dashboard</Link>
                       </div>
                   )}
                 </div>
