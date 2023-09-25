@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../styles/cart.css'
 import CommonSection from '../components/UI/CommonSection'
 import Helmet from '../components/Helmet/Helmet'
@@ -8,10 +8,21 @@ import { motion } from 'framer-motion'
 import { cartAcction } from '../redux/slices/cartSlice'
 import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { toast } from 'react-toastify'
 
 const Cart = () => {
   const cartItems = useSelector((state) => state.cart.cartItems)
   const totalAmount= useSelector((state) => state.cart.totalAmount)
+  const userInfo = useSelector((state)=>state.userInfo)
+  const [payNow, setPayNow]=useState(false)
+
+  const handleCheckout=()=>{
+    if(userInfo){
+      setPayNow(true)
+    }else{
+      toast.error("Đăng nhập để thanh toán")
+    }
+  }
   
   return (
     <Helmet title="Cart">
@@ -51,8 +62,8 @@ const Cart = () => {
               </div>
               <p className='fs-6 mt-2'>taxes and shipping will calculate in checkout</p>
               <div>
-              <button className="buy__btn w-100"><Link to='/checkout'>checkout</Link></button>
-              <button className="buy__btn w-100 mt-3"><Link to='/shop'>Continue Shopping</Link></button>
+              <button onClick={handleCheckout} className="buy__btn w-100">Thanh toán</button>
+              <button className="buy__btn w-100 mt-3"><Link to='/shop'>Tiếp tục mua sắm</Link></button>
               </div>
             </Col>
           </Row>
@@ -64,7 +75,7 @@ const Cart = () => {
 const Tr = ({ item }) => {
   const dispatch = useDispatch()
   const deleteProduct = () => {
-    dispatch(cartAcction.deleteItem(item.id))
+    dispatch(cartAcction.deleteItem(item))
   }
   return (
     <tr>

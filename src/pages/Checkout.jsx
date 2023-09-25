@@ -4,6 +4,7 @@ import Helmet from '../components/Helmet/Helmet'
 import CommonSection from '../components/UI/CommonSection'
 import '../styles/checkout.css'
 import { useSelector } from 'react-redux'
+import StripeCheckout from 'react-stripe-checkout';
 
 
 const Checkout = () => {
@@ -47,7 +48,12 @@ const Checkout = () => {
                       <span>0</span>
                     </h6>
                   <h4>Tong tiền <span>{totalAmount} VND</span></h4>
-                  <button className="buy_btn auth__btn w-100">Place an order</button>
+                  <button className="buy_btn auth__btn w-100 ">Place an order</button>
+                  {
+                    <div className='paybycard'>
+                      <StripeCheckout  stripeKey="pk_test_51NrfpxDk4qSKHcNdRZWzyjca6e70DLZBPSHmwpFmZoTYtc2dNgKSvEsSD3h9ydFdm69xHyf85ycYEcTTTEe7e7si00g7FOx9Mg"/>
+                    </div>
+                  }
                 </div>
                 
               </Col>

@@ -10,13 +10,14 @@ import userIcon from "../../assets/images/user-icon.png";
 
 
 import { Container, Row } from "reactstrap";
-import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 import useAuth from "../../custom-hooks/useAuth";
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebase.config";
 import { toast } from "react-toastify";
+
+import { useSelector } from "react-redux";
 
 const nav__links = [
   {
@@ -40,7 +41,6 @@ const Header = () => {
 
   const menuRef = useRef(null)
   const navigate = useNavigate()
-
   const { currentUser } = useAuth()
 
   const stickyHeaderFunc = () => {
@@ -127,12 +127,10 @@ const Header = () => {
                   ref={profileActionRef} onClick={toggleProfileActions}>
                   {
                     currentUser ? (<span onClick={logout}>Đăng xuất</span> ):(
-                      <div className="flex-row">
+                      <div className=" align-items-center justify-content-center flex-row">
                         <Link to='/signup'>Đăng ký</Link>
                         <p></p>
                         <Link to='/login'>Đăng nhập</Link>
-                        <p></p>
-                        <Link to='/login'>Dashboard</Link>
                       </div>
                   )}
                 </div>

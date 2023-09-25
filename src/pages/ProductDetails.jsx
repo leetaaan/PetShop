@@ -15,6 +15,7 @@ import { doc, getDoc } from "firebase/firestore";
 import useGetData from "../custom-hooks/useGetData";
 
 const ProductDetails = () => {
+
   const [product, setProduct] = useState({});
   const [tab, setTab] = useState("desc");
   const reviewUser = useRef("");
@@ -47,8 +48,8 @@ const ProductDetails = () => {
     imgUrl,
     productName,
     price,
-    // avgRating,
-    // reviews,
+    avgRating,
+    reviews,
     description,
     shortDesc,
     category,
@@ -128,6 +129,14 @@ const ProductDetails = () => {
                   <span>Category: {category.toUpperCase()}</span>
                 </div>
                 <p className="mt-3">{shortDesc}</p>
+                <p className="text-sm">Quantity</p>
+               {/* <div className="w-52 flex item-center justify-between text-gray-500 gap-4 boder p-3 ">
+               <div className="flex item-center gap-4 text-sm font-semibold">                
+                  <button>-</button>
+                  <span>{1}</span>
+                  <button>+</button>
+                  </div>
+               </div> */}
                 <motion.button
                   whileTap={{ scale: 1.2 }}
                   className="buy__btn"
@@ -169,7 +178,7 @@ const ProductDetails = () => {
               ) : (
                 <div className="product_review">
                   <div className="review_wrapper">
-                    {/* <ul>
+                    <ul>
                       {reviews?.map((item, index) => (
                         <li kew={index} className="mb-4">
                           <h6>LT</h6>
@@ -177,7 +186,7 @@ const ProductDetails = () => {
                           <p>{item.text}</p>
                         </li>
                       ))}
-                    </ul> */}
+                    </ul>
                     <div className="review_form">
                       <h4>Để lại trải nghiệm của bạn</h4>
                       <form action="" onSubmit={submitHandler}>

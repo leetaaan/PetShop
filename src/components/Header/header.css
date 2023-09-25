@@ -93,13 +93,14 @@
     display: flex;
     padding: 15px;
     align-items: center;
-    flex-direction: row;
+    flex-direction: column;
     background: var(--card-bg-01);
     line-height: 30px;
     cursor: pointer;
 }
 .show__profileActions{
-    display: ;
+    display: block;
+    opacity: 0;
 }
 .sigup_login{
     display: flex;
@@ -190,4 +191,3 @@
         line-height: 60px;
     }
 }
-

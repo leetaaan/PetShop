@@ -3,7 +3,7 @@ import { Container, Row, Col, Form, FormGroup } from "reactstrap";
 import { toast } from "react-toastify";
 
 import { db, storage } from "../firebase.config";
-import { ref, uploadBytesResumable, getDowloadURL } from "firebase/storage";
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { collection, addDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 
@@ -46,7 +46,7 @@ const AddProducts = () => {
           toast.error("images not uploaded");
         },
         () => {
-          getDowloadURL(uploadTask.snapshot.ref).then(async (dowloadURL) => {
+          getDownloadURL(uploadTask.snapshot.ref).then(async (dowloadURL) => {
             await addDoc(docRef, {
               productName: enterTitle,
               shortDesc: enterShortDesc,
