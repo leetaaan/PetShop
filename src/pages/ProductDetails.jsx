@@ -32,12 +32,12 @@ const ProductDetails = () => {
 
   useEffect(() => {
     const getProduct = async () => {
-      const docSnap = await getDoc(docRef);
+      const docSnap = await getDoc(docRef)
 
       if (docSnap.exists()) {
-        setProduct(docSnap.data());
+        setProduct(docSnap.data())
       } else {
-        console.log("no product!");
+        console.log("no product!")
       }
 
       getProduct();
@@ -48,8 +48,8 @@ const ProductDetails = () => {
     imgUrl,
     productName,
     price,
-    avgRating,
-    reviews,
+    // avgRating,
+    // reviews,
     description,
     shortDesc,
     category,
@@ -130,7 +130,7 @@ const ProductDetails = () => {
                 </div>
                 <p className="mt-3">{shortDesc}</p>
                 <p className="text-sm">Quantity</p>
-               {/* <div className="w-52 flex item-center justify-between text-gray-500 gap-4 boder p-3 ">
+                {/* <div className="w-52 flex item-center justify-between text-gray-500 gap-4 boder p-3 ">
                <div className="flex item-center gap-4 text-sm font-semibold">                
                   <button>-</button>
                   <span>{1}</span>
@@ -178,7 +178,7 @@ const ProductDetails = () => {
               ) : (
                 <div className="product_review">
                   <div className="review_wrapper">
-                    <ul>
+                    {/* <ul>
                       {reviews?.map((item, index) => (
                         <li kew={index} className="mb-4">
                           <h6>LT</h6>
@@ -186,7 +186,7 @@ const ProductDetails = () => {
                           <p>{item.text}</p>
                         </li>
                       ))}
-                    </ul>
+                    </ul> */}
                     <div className="review_form">
                       <h4>Để lại trải nghiệm của bạn</h4>
                       <form action="" onSubmit={submitHandler}>

@@ -33,16 +33,16 @@ const Cart = () => {
             <Col lg='9'>
               {
                 cartItems.length === 0 ? (
-                  <h2 className='fs-4 text-center'>Khong co san pham nao duoc them vao gio</h2>
+                  <h2 className='fs-4 text-center'>Không có sản phẩm nào được thêm vào giỏ</h2>
                 ) : (
                   <table className='table bordered'>
                     <thead>
                       <tr>
-                        <th>Image</th>
-                        <th>Title</th>
-                        <th>Price</th>
-                        <th>Qty</th>
-                        <th>Delete</th>
+                        <th>Ảnh</th>
+                        <th>Tên</th>
+                        <th>Giá</th>
+                        <th>Số lượng</th>
+                       <motion.th whileTap={{scale:1.2}}>Xóa</motion.th>
                       </tr>
                     </thead>
 
@@ -57,10 +57,10 @@ const Cart = () => {
             <Col lg='3'>
               <div>
                 <h6 className='d-flex align-items-center justify-content-between'>
-                  Subtotal
-                  <span className='fs-4 fw-bold'>$ {totalAmount}</span></h6>
+                  Tổng
+                  <span className='fs-4 fw-bold'>{totalAmount} Đ</span></h6>
               </div>
-              <p className='fs-6 mt-2'>taxes and shipping will calculate in checkout</p>
+              <p className='fs-6 mt-2'>Phí ship sẽ được tính trong thanh toán</p>
               <div>
               <button onClick={handleCheckout} className="buy__btn w-100">Thanh toán</button>
               <button className="buy__btn w-100 mt-3"><Link to='/shop'>Tiếp tục mua sắm</Link></button>
@@ -75,7 +75,7 @@ const Cart = () => {
 const Tr = ({ item }) => {
   const dispatch = useDispatch()
   const deleteProduct = () => {
-    dispatch(cartAcction.deleteItem(item))
+    dispatch(cartAcction.deleteItem(item.id))
   }
   return (
     <tr>
