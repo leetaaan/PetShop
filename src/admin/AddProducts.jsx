@@ -3,7 +3,7 @@ import { Container, Row, Col, Form, FormGroup } from "reactstrap";
 import { toast } from "react-toastify";
 
 import { db, storage } from "../firebase.config";
-import { ref, uploadBytesResumable, getDowloadURL } from "firebase/storage";
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { collection, addDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 
@@ -46,14 +46,14 @@ const AddProducts = () => {
           toast.error("images not uploaded");
         },
         () => {
-          getDowloadURL(uploadTask.snapshot.ref).then(async (dowloadURL) => {
+          getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
             await addDoc(docRef, {
               productName: enterTitle,
               shortDesc: enterShortDesc,
               description: enterDescription,
               category: enterCategory,
               price: enterPrice,
-              imgUrl: dowloadURL,
+              imgUrl: downloadURL,
             });
           });
         }
@@ -78,7 +78,7 @@ const AddProducts = () => {
               <>
                 <h4 className="mb-5">Add Product</h4>
                 <Form onSubmit={addProduct}>
-                  <FormGroup className="form__group">
+                  <FormGroup className="form_group">
                     <span>Product title</span>
                     <input
                       type="text"
@@ -89,7 +89,7 @@ const AddProducts = () => {
                     />
                   </FormGroup>
 
-                  <FormGroup className="form__group">
+                  <FormGroup className="form_group">
                     <span>Short Description</span>
                     <input
                       type="text"
@@ -100,7 +100,7 @@ const AddProducts = () => {
                     />
                   </FormGroup>
 
-                  <FormGroup className="form__group">
+                  <FormGroup className="form_group">
                     <span>Decription</span>
                     <input
                       type="text"
@@ -112,7 +112,7 @@ const AddProducts = () => {
                   </FormGroup>
 
                   <div className="d-flex align-items-center justify-content-between gap-5">
-                    <FormGroup className="form__group w-50">
+                    <FormGroup className="form_group w-50">
                       <span>Price</span>
                       <input
                         type="text"
@@ -123,7 +123,7 @@ const AddProducts = () => {
                       />
                     </FormGroup>
 
-                    <FormGroup className="form__group">
+                    <FormGroup className="form_group">
                       <span>Category</span>
                       <select
                         className="w-100 p-2"
@@ -141,7 +141,7 @@ const AddProducts = () => {
                   </div>
 
                   <div>
-                    <FormGroup className="form__group">
+                    <FormGroup className="form_group">
                       <span>Product Image</span>
                       <input
                         type="file"

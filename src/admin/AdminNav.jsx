@@ -1,6 +1,8 @@
 import React from "react";
 import { Container, Row } from "reactstrap";
 
+import userIcon from "../assets/images/user-icon.png"
+
 import useAuth from "../custom-hooks/useAuth";
 import "../styles/admin-nav.css";
 
@@ -51,7 +53,7 @@ const AdminNav = () => {
                 <span>
                   <i class="ri-settings-2-line"></i>
                 </span>
-                <img src={currentUser && currentUser.photoURL} alt="" />
+                <img src={currentUser ? currentUser.photoURL : userIcon} alt="" />
               </div>
             </div>
           </Container>

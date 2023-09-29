@@ -12,7 +12,7 @@ const Clock = () => {
     let interval;
 
     const countDown = () =>{
-        const destination = new Date('Oct 10, 2023').getTime()
+        const destination = new Date('dec 10, 2023').getTime()
 
         interval = setInterval(()=>{
             const now = new Date().getTime()
