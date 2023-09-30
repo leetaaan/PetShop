@@ -5,7 +5,7 @@ import { doc, deleteDoc } from "firebase/firestore";
 import { toast } from "react-toastify";
 
 const Users = () => {
-  const { data: usersData, loading } = useGetData("users");
+  const { data: usersData, loading } = useGetData("user");
 
   const deleteUser = async (id) => {
     await deleteDoc(doc(db, "users", id));
@@ -17,21 +17,21 @@ const Users = () => {
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
-            <h4 className="fw-bolc">Users</h4>
+            <h4 className="fw-bolc">Người dùng</h4>
           </div>
           <div className="col-lg-12">
             <table className="table">
               <thead>
                 <tr>
-                  <th>Image</th>
-                  <th>UserName</th>
+                  <th>Ảnh</th>
+                  <th>Tên</th>
                   <th>Email</th>
-                  <th>Action</th>
+                  <th> </th>
                 </tr>
               </thead>
               <tbody>
                 {loading ? (
-                  <h5 className="py-5 fw-bold">Loading...</h5>
+                  <h5 className="py-5 fw-bold">Đang tải...</h5>
                 ) : (
                   usersData?.map((user) => (
                     <tr key={user.uid}>
@@ -41,7 +41,7 @@ const Users = () => {
                       <td>{user.displayName}</td>
                       <td>{user.email}</td>
                       <td>
-                        <button onClick={()=>{deleteUser(user.id)}} className="btn btn-danger">Delete</button>
+                        <button onClick={()=>{deleteUser(user.id)}} className="btn btn-danger">Xóa</button>
                       </td>
                     </tr>
                   ))

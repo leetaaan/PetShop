@@ -66,7 +66,7 @@ const Shop = () => {
 
   return (
     <Helmet title=" Shop">
-      <CommonSection title="Products" />
+      <CommonSection title="Sản phẩm" />
 
       <section>
         <div className="container">
@@ -74,7 +74,7 @@ const Shop = () => {
             <div className="col-lg-3 col-md-6">
               <div className="filter__widget">
                 <select onClick={handleFilter}>
-                  <option>Filter By Category</option>
+                  <option>Lọc danh mục</option>
                   <option value="sofa">Sofa</option>
                   <option value="mobile">Mobile</option>
                   <option value="chair">Chair</option>
@@ -85,18 +85,13 @@ const Shop = () => {
             </div>
             <div className="col-lg-3 col-md-6 text-end">
               <div className="filter__widget">
-                <select>
-                  <option>Sort By</option>
-                  <option value="ascending">Ascending</option>
-                  <option value="descending">Descending</option>
-                </select>
               </div>
             </div>
             <div className="col-lg-6 col-md-12">
               <div className="search__box">
                 <input
                   type="text"
-                  placeholder="Search..."
+                  placeholder="Tìm kiếm..."
                   onChange={handleSearch}
                 />
                 <span>
@@ -112,7 +107,7 @@ const Shop = () => {
         <div className="container">
           <div className="row">
             {productsData.length === 0 ? (
-              <h1 className="fs-3">Product not found!</h1>
+              <h1 className="fs-3">Shop chưa có sản phẩm nào =,=</h1>
             ) : (
               <ProductLists data={productsData} />
             )}

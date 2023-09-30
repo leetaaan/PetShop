@@ -51,11 +51,11 @@ const AddProducts = () => {
         }
       );
       setLoading(false);
-      toast.success("Product successfully added!");
+      toast.success("Thêm sản phẩm thành công!");
       navigate("/dashboard/all-products");
     } catch (error) {
       setLoading(false);
-      toast.error("Product not added");
+      toast.error("Thêm sản phẩm không thành công");
     }
   };
 
@@ -65,57 +65,57 @@ const AddProducts = () => {
         <div className="row">
           <div className="col-lg-12">
             {loading ? (
-              <h4 className="py-5">Loading...</h4>
+              <h4 className="py-5">Đang tải...</h4>
             ) : (
               <>
-                <h4 className="mb-5">Add Product</h4>
+                <h4 className="mb-5">Thêm sản phẩm</h4>
                 <form action="" onSubmit={addProduct}>
                   <div className="form__group">
-                    <span>Product title</span>
+                    <span>Tên sản phẩm</span>
                     <input
                       type="text"
                       name="title"
-                      placeholder="Product name"
+                      placeholder="Tên sản phẩm"
                       value={entertitle}
                       onChange={(e) => setTitle(e.target.value)}
                       required
                     />
                   </div>
                   <div className="form__group">
-                    <span>Short description</span>
+                    <span>Mô tả ngắn</span>
                     <input
                       type="text"
                       name="shortDesc"
-                      placeholder="Product's description in brief"
+                      placeholder="Mô tả ngắn về sản phẩm"
                       value={entershortDesc}
                       onChange={(e) => setShortDesc(e.target.value)}
                       required
                     />
                   </div>
                   <div className="form__group">
-                    <span>Description</span>
+                    <span>Mô tả chi tiết</span>
                     <input
                       type="text"
                       name="description"
-                      placeholder="Product's description in detail"
+                      placeholder="Mô tả chi tiết về sản phẩm"
                       value={enterdescription}
                       onChange={(e) => setDescription(e.target.value)}
                     />
                   </div>
                   <div className="d-flex align-items-center justify-content-between gap-5">
                     <div className="form__group w-50">
-                      <span>Price</span>
+                      <span>Giá</span>
                       <input
                         type="number"
                         name="price"
-                        placeholder="₹1000"
+                        placeholder="500.000 Đ"
                         value={enterprice}
                         onChange={(e) => setPrice(e.target.value)}
                         required
                       />
                     </div>
                     <div className="form__group w-50">
-                      <span>Category</span>
+                      <span>Danh mục</span>
                       <select
                         className="w-50 p-2 rounded border-dark"
                         name="category"
@@ -123,8 +123,8 @@ const AddProducts = () => {
                         onChange={(e) => setCategory(e.target.value)}
                         required
                       >
-                        <option className="text-center">Select Category</option>
-                        <option value="chair">Chair</option>
+                        <option className="text-center">Chọn danh mục</option>
+                        <option value="Chó">Chó</option>
                         <option value="sofa">Sofa</option>
                         <option value="watch">Watch</option>
                         <option value="mobile">Mobile</option>
@@ -133,7 +133,7 @@ const AddProducts = () => {
                     </div>
                   </div>
                   <div className="form__group">
-                    <span>Product Image</span>
+                    <span>Ảnh sản phẩm</span>
                     <input
                       type="file"
                       accept=".png, .jpg, .jpeg"
@@ -143,7 +143,7 @@ const AddProducts = () => {
                     />
                   </div>
                   <button type="submit" className="buy__btn btn">
-                    Add Product
+                    Thêm sản phẩm
                   </button>
                 </form>
               </>

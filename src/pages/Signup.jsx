@@ -75,16 +75,16 @@ const Signup = () => {
         <div className="row">
           {loading ? (
             <div className="col-lg-12 text-center">
-              <h5 className="fw-bold">Loading...</h5>
+              <h5 className="fw-bold">Đang tải...</h5>
             </div>
           ) : (
             <div className="col-lg-6 m-auto mt-5 mb-5 text-center">
-              <h3 className="fw-bold mt-3 mb-4">Signup</h3>
+              <h3 className="fw-bold mt-3 mb-4">Đăng ký</h3>
               <form action="" className="auth__form" onSubmit={signUp}>
                 <div className="form__group">
                   <input
                     type="text"
-                    placeholder="Username"
+                    placeholder="Nhập tên của bạn"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
                   />
@@ -92,7 +92,7 @@ const Signup = () => {
                 <div className="form__group">
                   <input
                     type="email"
-                    placeholder="Enter you email"
+                    placeholder="Nhập email của bạn"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                   />
@@ -100,7 +100,7 @@ const Signup = () => {
                 <div className="form__group">
                   <input
                     type="password"
-                    placeholder="Enter you password"
+                    placeholder="Nhập mật khẩu của bạn"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                   />
@@ -112,10 +112,10 @@ const Signup = () => {
                   />
                 </div>
                 <button type="submit" className="buy__btn auth__btn mb-3">
-                  Create an Account
+                  Tạo tài khoản
                 </button>
                 <p>
-                  Already have an account? <Link to="/login">Login</Link>
+                Đã có tài khoản? <Link to="/login">Đăng nhập</Link>
                 </p>
               </form>
             </div>

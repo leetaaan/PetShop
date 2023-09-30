@@ -20,16 +20,16 @@ const AllProducts = () => {
             <table className="table">
               <thead>
                 <tr>
-                  <th>Image</th>
-                  <th>Title</th>
-                  <th>Category</th>
-                  <th>Price</th>
-                  <th>Action</th>
+                  <th>Ảnh</th>
+                  <th>Tên</th>
+                  <th>Danh mục</th>
+                  <th>Giá</th>
+                  <th> </th>
                 </tr>
               </thead>
               <tbody>
                 {loading ? (
-                  <h3 className="py-5">Loading...</h3>
+                  <h3 className="py-5">Đang tải...</h3>
                 ) : (
                   productsData?.map((item) => (
                     <tr key={item.id}>
@@ -38,9 +38,9 @@ const AllProducts = () => {
                       </td>
                       <td>{item.productName}</td>
                       <td>{item.category.toUpperCase()}</td>
-                      <td>₹{item.price}</td>
+                      <td>{item.price} đ</td>
                       <td>
-                        <button onClick={()=>{deleteProduct(item.id)}} className="btn btn-danger py-1 my-1">Delete</button>
+                        <button onClick={()=>{deleteProduct(item.id)}} className="btn btn-danger py-1 my-1">Xóa</button>
                       </td>
                     </tr>
                   ))

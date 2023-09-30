@@ -12,7 +12,7 @@ const Footer = () => {
         <div className='mb-4 col-lg-5 col-12'>
           <div className="logo">
             <div>
-              <h1 className='text-white'>Multimart</h1>
+              <h1 className='text-white'>PetShop</h1>
             </div>
           </div>
           <p className="footer__text mt-4">

@@ -2,45 +2,48 @@ import React from "react";
 import useAuth from "../custom-hooks/useAuth";
 import "../styles/admin-nav.css";
 
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+
 
 const admin__nav = [
   {
-    display: "Dashboard",
+    display: "Bảng điều khiển",
     path: "/dashboard",
   },
   {
-    display: "Add Product",
+    display: "Thêm sản phẩm",
     path: "/dashboard/add-product",
   },
   {
-    display: "All Products",
+    display: "Tất cả sản phẩm",
     path: "/dashboard/all-products",
   },
   {
-    display: "Orders",
+    display: "Sản phẩn được đặt",
     path: "/dashboard/orders",
   },
   {
-    display: "Users",
+    display: "Người dùng",
     path: "/dashboard/users",
   },
 ];
 
 const AdminNav = () => {
-  
+  const navigate = useNavigate();
   const { currentUser } = useAuth();
-
+  const gotoHome=() => {
+    navigate("/home");
+  };
   return (
     <>
       <header className="admin__header">
         <div className="container">
           <div className="admin__nav-wrapper-top">
             <div className="logo">
-              <h2>Multimart</h2>
+              <h2 onClick={gotoHome}>PetShop</h2>
             </div>
             <div className="search__box">
-              <input type="text" placeholder="Search..." />
+              <input type="text" placeholder="Tìm kiếm..." />
               <span className="white">
                 <i class="ri-search-line"></i>
               </span>
