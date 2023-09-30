@@ -8,7 +8,7 @@ import {toast} from 'react-toastify'
 
 const Users = () => {
 
-  const {data: usersData, loading} = useGetData('users')
+  const {data: usersData, loading} = useGetData('user')
 
   const deleteUser = async(id) =>{
     await deleteDoc(doc(db,'users',id))
