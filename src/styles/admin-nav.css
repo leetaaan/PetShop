@@ -4,37 +4,37 @@
     background: var(--primary-color);
 }
 
-.admin__nav-top{
+.admin__nav-top {
     width: 100%;
 }
 
-.admin__nav-wrapper-top{
+.admin__nav-wrapper-top {
     display: flex;
     align-items: center;
     justify-content: space-between;
     column-gap: 3rem;
 }
 
-.admin__nav-top-right img{
+.admin__nav-top-right img {
     width: 40px;
     height: 40px;
     border-radius: 50px;
     cursor: pointer;
 }
 
-.admin__nav-top-right{
+.admin__nav-top-right {
     display: flex;
     align-items: center;
     column-gap: 2rem;
 }
 
-.admin__nav-wrapper-top .search__box {
+.search__box {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.admin__nav-top-right span i{
+.admin__nav-top-right span i {
     color: whitesmoke;
     cursor: pointer;
 }
@@ -44,25 +44,21 @@
     color: whitesmoke;
 }
 
-.admin__menu{
+.admin__menu {
     width: 100%;
-    height:70px;
+    height: 70px;
     line-height: 70px;
     background: var(--card-bg-02);
-}
-
-.admin__navigation {
-    align-items: center;
 }
 
 .admin__menu-list {
     display: flex;
     align-items: center;
+    justify-content: space-around;
     column-gap: 2.7rem;
-    justify-content: center;
 }
 
-.admin__menu-list .admin__menu-item a{
+.admin__menu-item a {
     color: var(--primary-color);
     font-weight: 500;
     padding: 10px 15px;
