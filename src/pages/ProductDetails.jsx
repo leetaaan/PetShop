@@ -15,6 +15,7 @@ import { doc, getDoc } from "firebase/firestore";
 import useGetData from "../custom-hooks/useGetData";
 
 const ProductDetails = () => {
+
   const [product, setProduct] = useState({});
   const [tab, setTab] = useState("desc");
   const reviewUser = useRef("");
@@ -31,12 +32,12 @@ const ProductDetails = () => {
 
   useEffect(() => {
     const getProduct = async () => {
-      const docSnap = await getDoc(docRef);
+      const docSnap = await getDoc(docRef)
 
       if (docSnap.exists()) {
-        setProduct(docSnap.data());
+        setProduct(docSnap.data())
       } else {
-        console.log("no product!");
+        console.log("no product!")
       }
 
       getProduct();
@@ -128,6 +129,14 @@ const ProductDetails = () => {
                   <span>Category: {category.toUpperCase()}</span>
                 </div>
                 <p className="mt-3">{shortDesc}</p>
+                <p className="text-sm">Quantity</p>
+                {/* <div className="w-52 flex item-center justify-between text-gray-500 gap-4 boder p-3 ">
+               <div className="flex item-center gap-4 text-sm font-semibold">                
+                  <button>-</button>
+                  <span>{1}</span>
+                  <button>+</button>
+                  </div>
+               </div> */}
                 <motion.button
                   whileTap={{ scale: 1.2 }}
                   className="buy__btn"

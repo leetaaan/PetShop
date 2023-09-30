@@ -31,18 +31,25 @@ const cartSlice = createSlice({
                 existingItem.quantity++
                 existingItem.totalPrice = Number(existingItem.totalPrice) + Number(newItem.price)
             }
-            state.totalAmount = state.cartItems.reduce((total, item) => total + Number(item.price) * Number(item.quantity));
+            state.totalAmount = state.cartItems.reduce((total, item) => total + Number(item.price) * Number(item.quantity),0);
         },
-        deleteItem:(state,actions)=>{
-            const id=actions.payload
-            const existingItem=state.cartItem.find(item=>item.id===id)
+        deleteItem: (state, actions) => {
+            const id = actions.payload
+            const existingItem = state.cartItems.find((item) => item.id === id)
 
-            if(existingItem){
-                state.cartItems=state.cartItems.filter(item=>item.id !==id)
-                state.totalQuantity=state.totalQuantity-existingItem.quantity
+            if (existingItem) {
+                state.cartItems = state.cartItems.filter((item) => item.id !== id)
+                state.totalQuantity = state.totalQuantity - existingItem.quantity
             }
-            state.totalAmount = state.cartItems.reduce((total, item) => total + item.price * item.quantity,0).toFixed(2);
+            state.totalAmount = state.cartItems.reduce((total, item) => total + Number(item.price) * Number(item.quantity),0);
         },
+
+        addUser:(state,actions)=>{
+            state.userInfo=actions.payload
+        },
+        removeUser:(state)=>{
+            state.userInfo=null
+        }
     },
 });
 

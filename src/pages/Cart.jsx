@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../styles/cart.css'
 import CommonSection from '../components/UI/CommonSection'
 import Helmet from '../components/Helmet/Helmet'
@@ -8,10 +8,21 @@ import { motion } from 'framer-motion'
 import { cartAcction } from '../redux/slices/cartSlice'
 import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { toast } from 'react-toastify'
 
 const Cart = () => {
   const cartItems = useSelector((state) => state.cart.cartItems)
   const totalAmount= useSelector((state) => state.cart.totalAmount)
+  const userInfo = useSelector((state)=>state.userInfo)
+  const [payNow, setPayNow]=useState(false)
+
+  const handleCheckout=()=>{
+    if(userInfo){
+      setPayNow(true)
+    }else{
+      toast.error("Đăng nhập để thanh toán")
+    }
+  }
   
   return (
     <Helmet title="Cart">
@@ -22,16 +33,16 @@ const Cart = () => {
             <Col lg='9'>
               {
                 cartItems.length === 0 ? (
-                  <h2 className='fs-4 text-center'>Khong co san pham nao duoc them vao gio</h2>
+                  <h2 className='fs-4 text-center'>Không có sản phẩm nào được thêm vào giỏ</h2>
                 ) : (
                   <table className='table bordered'>
                     <thead>
                       <tr>
-                        <th>Image</th>
-                        <th>Title</th>
-                        <th>Price</th>
-                        <th>Qty</th>
-                        <th>Delete</th>
+                        <th>Ảnh</th>
+                        <th>Tên</th>
+                        <th>Giá</th>
+                        <th>Số lượng</th>
+                       <motion.th whileTap={{scale:1.2}}>Xóa</motion.th>
                       </tr>
                     </thead>
 
@@ -46,13 +57,13 @@ const Cart = () => {
             <Col lg='3'>
               <div>
                 <h6 className='d-flex align-items-center justify-content-between'>
-                  Subtotal
-                  <span className='fs-4 fw-bold'>$ {totalAmount}</span></h6>
+                  Tổng
+                  <span className='fs-4 fw-bold'>{totalAmount} Đ</span></h6>
               </div>
-              <p className='fs-6 mt-2'>taxes and shipping will calculate in checkout</p>
+              <p className='fs-6 mt-2'>Phí ship sẽ được tính trong thanh toán</p>
               <div>
-              <button className="buy__btn w-100"><Link to='/checkout'>checkout</Link></button>
-              <button className="buy__btn w-100 mt-3"><Link to='/shop'>Continue Shopping</Link></button>
+              <button onClick={handleCheckout} className="buy__btn w-100">Thanh toán</button>
+              <button className="buy__btn w-100 mt-3"><Link to='/shop'>Tiếp tục mua sắm</Link></button>
               </div>
             </Col>
           </Row>

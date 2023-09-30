@@ -46,6 +46,7 @@ const AddProducts = () => {
           toast.error("images not uploaded");
         },
         () => {
+
           getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
             await addDoc(docRef, {
               productName: enterTitle,

@@ -30,3 +30,8 @@ border: 1px solid var(--card-bg-02)
     font-size: 1rem;
     margin-top: 40px;
 }
+.paybycard{
+    margin-top: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
