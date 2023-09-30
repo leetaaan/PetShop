@@ -1,8 +1,12 @@
+.hero__section, .trending__products {
+    box-shadow: 0 4px 6px 0px #0000002b;
+}
+
 .hero__section {
     background: var(--hero-bg);
 }
 
-.hero__section h2{
+.hero__section h2 {
     color: var(--primary-color);
     font-size: 2.5rem;
     font-weight: 600;
@@ -10,13 +14,12 @@
 }
 
 .hero__section p {
-    color:#111;
+    color: var(--primary-color);
     line-height: 28px;
-
 }
 
-.hero__section p:nth-child(1){
-    font-weight:500;
+.hero__section p:nth-child(1) {
+    font-weight: 500;
 }
 
 .buy__btn {
@@ -32,16 +35,17 @@
 }
 
 .buy__btn a:hover {
-    color: #fff
+    color: #fff;
 }
 
 .hero__content {
-    padding-top: 45px;
+    padding-top: 45px; 
 }
 
-.timer__count{
+.timer__count {
     background: var(--primary-color);
     height: 300px;
+    box-shadow: 0 0px 10px 10px #0000002b;
 }
 
 .timer__count img {
@@ -50,68 +54,67 @@
     object-fit: contain;
 }
 
-.store__btn{
+.store__btn {
     background: #fff;
     color: var(--primary-color);
     font-weight: 600;
-
 }
 
-.store__btn a:hover{
+.store__btn a:hover {
     color: var(--primary-color);
 }
-
-@media only screen and (max-width: 992px){
-    .hero__content h2{
+/* 
+@media secreen and (min-width: 768px) {
+    .hero__content h2 {
         font-size: 2rem;
     }
-
-    .section__title{
+    .section__title {
         font-size: 1.7rem;
     }
-
-    .counter__img{
+    .counter__img {
         display: none;
     }
-    
-    .clock__top-content{
+    .clock__top-content {
         text-align: center;
     }
-
-    .clock__top-content h4{
-        font-size: 0.9rem;
+    .clock__top-content h4 {
+        font-size: 0.9rem !important;
     }
-
-    .clock__top-content h3{
+    .clock__top-content h3 {
         font-size: 1rem !important;
     }
-
     .count__down-col {
         text-align: center;
     }
+
 }
 
-@media only screen and (max-width: 768px){
-    .hero__content h2{
+@media only secreen and (max-width: 768px) {
+    .hero__content h2 {
         font-size: 1.6rem;
     }
-
     .hero__content p {
         font-size: 0.9rem;
     }
-
-    .buy__btn a{
+    .buy__btn a {
         font-size: 0.9rem;
     }
-
-    .section__title{
+    .section__title {
         font-size: 1.4rem;
     }
 }
 
-@media only screen and (max-width: 576px){
-    .hero__content {
-        padding-top: 0;
-        margin-bottom: 40px;
+*/
+
+/* @media only secreen and (min-width: 576px) {
+    .hero__subtitle {
+        font-size: 2rem;
     }
-}
+    .hero__content > h2 {
+        padding-top: 0;
+        color: var(--primary-color);
+        font-size: 2rem;
+        font-weight: 600;
+        margin: 20px 0px;
+    }
+} */

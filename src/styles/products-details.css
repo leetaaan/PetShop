@@ -1,69 +1,78 @@
-.product_details{
+.product__details {
     margin-top: 70px;
 }
-.product_details h2{
+
+.product__details h2 {
     font-size: 1.6rem;
     margin-bottom: 10px;
 }
-.product_rating span i{
-color: coral;
+
+.product__rating span i {
+    color: coral;
 }
-.product_rating p span{
+
+.product__rating p span {
     color: coral;
     font-weight: 500;
 }
-.product_price{
+
+.product__price {
     font-size: 1.3rem;
     font-weight: 500;
 }
 
-
-.tab_wrapper h6 {
+.tab__wrapper h6 {
     color: var(--primary-color);
     font-weight: 500;
-    font-size: 1rem;
+    font-style: 1rem;
+    margin-right: 10px;
     cursor: pointer;
 }
-.active_tab {
+.active__tab {
     font-weight: 600;
 }
-.tab_content p{
+
+.tav__content p, span {
     line-height: 30px;
 }
 
-.review_wrapper ul li span {
+.review__wrapper ul li span {
     color: coral;
     font-weight: 600;
 }
-.review_wrapper ul li p {
+
+.review__wrapper ui li p {
     margin-top: 10px;
 }
 
-
-.review_form {
+.review__form {
     width: 70%;
     margin: auto;
     margin-top: 50px;
 }
-.review_form h4 {
+
+.review__form h4 {
     font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 30px;
 }
 
-.form_group input, .form_group textarea {
+.form__group input, textarea {
     width: 100%;
     border: 1px solid var(--primary-color);
     border-radius: 5px;
     padding: 8px 20px;
 }
-.form_group input:focus, .form_group textarea:focus {
+
+.form__group input:focus, textarea:focus {
     outline: none;
 }
-.form_group {
+
+.form__group {
     margin-bottom: 30px;
 }
-.form_group span {
+
+.form__group span {
     display: flex;
     align-items: center;
     column-gap: 5px;
@@ -72,19 +81,17 @@ color: coral;
     cursor: pointer;
 }
 
-
-.related_title {
+.related__title {
     font-size: 1.2rem;
     font-weight: 600;
     margin-top: 30px;
 }
 
-
-@media only screen and (max-width:768px) {
-    .product_details{
+@media only screen and (max-width: 768px) {
+    .product__details h2 {
         font-size: 1.3rem;
     }
-    .rating_group {
+    .rating__group {
         column-gap: 1rem !important;
     }
 }

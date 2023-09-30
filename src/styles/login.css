@@ -1,25 +1,24 @@
-.auth_form{
+.auth__form {
     background: var(--primary-color);
     padding: 40px;
     border-radius: 5px;
 }
-.auth_btn{
-    background: #fff;
+
+.auth__btn {
+    background: #fff !important;
     color: var(--primary-color);
-    font-weight:600;
-    font-size: 1rem;
-    border: none;
-    outline: none;
-    padding: 8px 20px;
-    border-radius: 5px;
+    font-weight: 600;
 }
-.auth_form p {
+
+.auth__form p {
     margin-top: 30px;
 }
-.auth_form p a{
-    color: rgba(255, 255, 255, 0.735);
+
+.auth__form p a {
+    color: rgba(255, 255, 255, 0.737);
 }
-.auth_form input[type='file']{
+
+.auth__form input[type='file'] {
     color: #fff;
     cursor: pointer;
 }
