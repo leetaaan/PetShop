@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 
 import { Navigate, NavLink, useNavigate } from "react-router-dom";
-import "./header.css";
+import "./Header.css";
 
 import { motion } from "framer-motion";
 import logo from "../../assets/images/logo.jpg";
@@ -51,10 +51,10 @@ const Header = () => {
 
   const logout = () => {
     signOut(auth).then(()=> {
-      toast.success('Logged out')
+      toast.success('Đã đăng xuất')
       navigate('/home')
     }).catch(err => {
-      toast.error(err.message)
+      toast.error('Đăng xuâts không thành công')
     })
   }
 

@@ -80,7 +80,7 @@ const ProductDetails = () => {
         price,
       })
     );
-    toast.success("Product added success");
+    toast.success("Đã thêm sản phẩm");
   };
 
   useEffect(() => {
@@ -94,7 +94,7 @@ const ProductDetails = () => {
         <div className="container">
           <div className="row">
             <div className="col-lg-6">
-              <img src={imgUrl} alt="" />
+              <img className="p-5" src={imgUrl} alt="" />
             </div>
             <div className="col-lg-6">
               <div className="product__details">

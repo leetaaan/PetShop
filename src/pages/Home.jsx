@@ -19,9 +19,10 @@ const Home = () => {
   const { data: products, loading } = useGetData('products');
   
   const [trendingProducts, setTrendingProducts] = useState([]);
-  const [bestSalesPets, setBestSalesPets] = useState([]);
+  //const [bestSalesPets, setBestSalesPets] = useState([]);
   const [petProducts, setPetProducts] = useState([]);
   const [petCats, setPetCats] = useState([]);
+  const [petRbs, setPetRbs] = useState([]);
   const [popularProducts, setPopularProducts] = useState([]);
 
   const year = new Date().getFullYear();
@@ -31,10 +32,12 @@ const Home = () => {
       (item) => item.category === "dog"
     );
 
-    const filteredBestSalesPets = products.filter(
-      (item) => item.category === "cat"
+    // const filteredBestSalesPets = products.filter(
+    //   (item) => item.category === "cat"
+    // );
+    const filteredRb = products.filter(
+      (item) => item.category === "rabbit"
     );
-
     const filteredPetProducts = products.filter(
       (item) => item.category === "productForDog"
     );
@@ -48,9 +51,10 @@ const Home = () => {
     );
 
     setTrendingProducts(filteredTrendingProducts);
-    setBestSalesPets(filteredBestSalesPets);
+    //setBestSalesPets(filteredBestSalesPets);
     setPetProducts(filteredPetProducts);
     setPetCats(filteredCat);
+    setPetRbs(filteredRb);
     setPopularProducts(filteredPopularProducts);
   }, [products]);
 
@@ -62,14 +66,12 @@ const Home = () => {
             <div className="col-12 col-lg-6 col-md-12">
               <div className="hero__content">
                 <p className="hero__subtitle">Trending pet in {year}</p>
-                <h2>Take good care of your pets</h2>
+                <h2>Chăm sóc thú cưng của bạn tốt hơn</h2>
                 <p>
-                Caring for pets takes time, effort, and patience. 
-                However, it is a responsibility that we must take on when we get a pet. 
-                Love and care for your pet well so that they can stay healthy and happy.
+                Chăm sóc thú cưng cần có thời gian, công sức và sự kiên nhẫn. Tuy nhiên, đó là trách nhiệm mà chúng ta phải đảm nhận khi nuôi thú cưng. Hãy yêu thương và chăm sóc thú cưng của bạn thật tốt để chúng luôn khỏe mạnh và vui vẻ.
                 </p>
                 <motion.button whileTap={{ scale: 1.2 }} className="buy__btn">
-                  <Link to="/shop">Shop Now</Link>
+                  <Link to="/shop">Mua ngay</Link>
                 </motion.button>
               </div>
             </div>
@@ -83,12 +85,12 @@ const Home = () => {
       </section>
 
       <Services />
-
+      
       <section className="trending__products">
         <div className="container">
           <div className="row">
             <div className="col-lg-12 text-center mb-5">
-              <h2 className="section__title">Trending Pet</h2>
+              <h2 className="section__title">Chó cảnh</h2>
             </div>
             {loading ? (
               <h5 className="fw-bold">Loading...</h5>
@@ -98,14 +100,13 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-      <section className="best__sales">
+      <section className="popular__category">
         <div className="container">
           <div className="row">
             <div className="col-lg-12 text-center mb-5">
-              <h2 className="section__title">Best Selling Pet</h2>
+              <h2 className="section__title">Mèo cảnh</h2>
             </div>
-            <ProductsList data={bestSalesPets}/>
+            <ProductsList data={petCats} />
           </div>
         </div>
       </section>
@@ -115,15 +116,15 @@ const Home = () => {
           <div className="row">
             <div className="col-md-6 col-sm-12" lg="6" md="12">
               <div className="clock__top-content">
-                <h4 className="text-white fs-6">Limited Offers</h4>
-                <h3 className="text-white fs-5 mt-2">Quality Puppy</h3>
+                <h4 className="text-white fs-6">Ưu đãi giới hạn</h4>
+                <h3 className="text-white fs-5 mt-2">Chó con chất lượng</h3>
               </div>
               <Clock />
               <motion.button
                 whileTap={{ scale: 1.2 }}
                 className="buy__btn store__btn"
               >
-                <Link to="/shop">Visit Store</Link>
+                <Link to="/shop">Ghé thăm cửa hàng</Link>
               </motion.button>
             </div>
 
@@ -134,25 +135,25 @@ const Home = () => {
         </div>
       </section>
 
+      
+      <section className="best__sales">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12 text-center mb-5">
+              <h2 className="section__title">Thỏ</h2>
+            </div>
+            <ProductsList data={petRbs}/>
+          </div>
+        </div>
+      </section>
       <section className="new__arrivals">
         <div className="container">
           <div className="row">
             <div className="col-lg-12 text-center mb-5">
-              <h2 className="section__title">New Arrivals</h2>
+              <h2 className="section__title">Sản phẩm cho chó, mèo</h2>
             </div>
             <ProductsList data={petProducts} />
             <ProductsList data={popularProducts} />
-          </div>
-        </div>
-      </section>
-
-      <section className="popular__category">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-12 text-center mb-5">
-              <h2 className="section__title">Popular</h2>
-            </div>
-            <ProductsList data={petCats} />
           </div>
         </div>
       </section>

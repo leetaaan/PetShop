@@ -43,7 +43,7 @@ const Cart = () => {
               <div>
                 <h6 className="d-flex align-items-center justify-content-between ">
                   Tổng:
-                  <span className="fs-4 fw-bold">₹{totalAmount}</span>
+                  <span className="fs-4 fw-bold">{totalAmount} đ</span>
                 </h6>
               </div>
               <p className="fs-6 mt-2">
@@ -80,8 +80,8 @@ const Tr = ({ item }) => {
         <img src={item.imgUrl} alt="" />
       </td>
       <td>{item.productName}</td>
-      <td>₹{item.price}</td>
-      <td>{item.quantity}px</td>
+      <td>{item.price} đ</td>
+      <td>{item.quantity}</td>
       <td onClick={deleteProduct}>
         <motion.i
           whileTap={{ scale: 1.2 }}

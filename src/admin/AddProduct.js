@@ -35,7 +35,7 @@ const AddProducts = () => {
 
       uploadTask.on(
         () => {
-          toast.error("images not uploaded!");
+          toast.error("Lỗi tải ảnh lên");
         },
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {

@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.css";
 
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
-import store from "./redux/store";
+import store from "./redux/Store";
 import { Provider } from "react-redux";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';

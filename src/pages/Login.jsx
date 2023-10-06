@@ -28,11 +28,11 @@ const Login = () => {
 
       console.log(user);
       setLoading(false);
-      toast.success("Successfully logged in");
+      toast.success("Đăng nhập thành công");
       navigate("/checkout");
     } catch (error) {
       setLoading(false);
-      toast.error(error.message);
+      toast.error("Đăng nhập không thành công");
     }
   };
 

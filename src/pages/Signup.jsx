@@ -40,7 +40,7 @@ const Signup = () => {
 
       uploadTask.on(
         (error) => {
-          toast.error(error.message);
+          toast.error('Lỗi tải hình ảnh');
         },
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
@@ -61,11 +61,11 @@ const Signup = () => {
       );
 
       setLoading(false);
-      toast.success("Account created");
+      toast.success("Dăng ký thành công");
       navigate("/login");
     } catch (error) {
       setLoading(false);
-      toast.error("Something went wrong");
+      toast.error("Đã có lỗi xảy ra");
     }
   };
 

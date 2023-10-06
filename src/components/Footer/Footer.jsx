@@ -16,7 +16,7 @@ const Footer = () => {
             </div>
           </div>
           <p className="footer__text mt-4">
-          Caring for pets takes time, effort, and patience. However, it is a responsibility that we must take on when we get a pet. Love and care for your pet well so that they can stay healthy and happy.
+          Chăm sóc thú cưng cần có thời gian, công sức và sự kiên nhẫn. Tuy nhiên, đó là trách nhiệm mà chúng ta phải đảm nhận khi nuôi thú cưng. Hãy yêu thương và chăm sóc thú cưng của bạn thật tốt để chúng luôn khỏe mạnh và vui vẻ.
           </p>
         </div>
         <div className='mb-4 col-lg-2 col-sm-6'>
@@ -30,10 +30,10 @@ const Footer = () => {
                 <Link to='#'>Mèo cảnh</Link>
               </ListGroupItem>
               <ListGroupItem className='ps-0 border-0'>
-                <Link to='#'>Đồ cho chó</Link>
+                <Link to='#'>Sản phẩm cho chó</Link>
               </ListGroupItem>
               <ListGroupItem className='ps-0 border-0'>
-                <Link to='#'>Đồ cho mèo</Link>
+                <Link to='#'>Sản phẩm cho mèo</Link>
               </ListGroupItem>
             </ListGroup>
           </div>
@@ -63,11 +63,11 @@ const Footer = () => {
             <ListGroup className='footer__contact mb-3'>
               <ListGroupItem className='ps-0 border-0 d-flex align-items-center gap-2'>
                 <span><i class="ri-map-pin-line"></i></span>
-                <p>123, Sarogni Nagar, Delhi, India</p>
+                <p>1 Phù Đổng Thiên Vương - Đà Lạt</p>
               </ListGroupItem>
               <ListGroupItem className='ps-0 border-0 d-flex align-items-center gap-2'>
                 <span><i class="ri-phone-line"></i></span>
-                <p>+910123456789</p>
+                <p>+12345678</p>
               </ListGroupItem>
               <ListGroupItem className='ps-0 border-0 d-flex align-items-center gap-2'>
                 <span><i class="ri-mail-line"></i></span>

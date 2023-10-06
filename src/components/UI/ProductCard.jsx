@@ -20,7 +20,7 @@ const ProductCard = ({item}) => {
       })
     );
 
-    toast.success('Product added successfully');
+    toast.success('Đã thêm sản phẩm');
   }
 
   return (
