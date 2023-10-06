@@ -42,16 +42,16 @@ const Login = () => {
         <div className="row">
           {loading ? (
             <div className="col-lg-12 text-center h-100">
-              <h6>Loading...</h6>
+              <h6>Đang tải...</h6>
             </div>
           ) : (
             <div className="col-lg-6 m-auto mt-5 mb-5 text-center">
-              <h3 className="fw-bold mt-3 mb-4">Login</h3>
+              <h3 className="fw-bold mt-3 mb-4">Đăng nhập</h3>
               <form action="" className="auth__form" onSubmit={signIn}>
                 <div className="form__group">
                   <input
                     type="email"
-                    placeholder="Enter you email"
+                    placeholder="Nhập Email của bạn"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                   />
@@ -59,7 +59,7 @@ const Login = () => {
                 <div className="form__group">
                   <input
                     type="password"
-                    placeholder="Enter you password"
+                    placeholder="Nhập mật khẩu của bạn"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                   />
@@ -69,11 +69,11 @@ const Login = () => {
                   type="submit"
                   className="buy__btn auth__btn mb-3"
                 >
-                  Login
+                  Đăng nhập
                 </motion.button>
                 <p>
-                  Don't have an account?{" "}
-                  <Link to="/signup">Create an account</Link>
+                  Chưa có tài khoản?{" "}
+                  <Link to="/signup">Tạo tài khoản</Link>
                 </p>
               </form>
             </div>

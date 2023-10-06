@@ -122,8 +122,8 @@ const ProductDetails = () => {
                   </p> */}
                 </div>
                 <div className="d-flex align-items-center gap-5">
-                  <span className="product__price">₹{price}</span>
-                  <span>Category:- <span>{category}</span></span>
+                  <span className="product__price">{price} đ</span>
+                  <span>Danh mục: <span>{category}</span></span>
                 </div>
                 <p className="mt-3">{shortDesc}</p>
 
@@ -132,7 +132,7 @@ const ProductDetails = () => {
                   className="buy__btn"
                   onClick={addToCart}
                 >
-                  Add to Cart
+                  Thêm vào giỏ hàng
                 </motion.button>
               </div>
             </div>
@@ -148,7 +148,7 @@ const ProductDetails = () => {
                   className={`${tab === "desc" ? "active__tab" : ""}`}
                   onClick={() => setTab("desc")}
                 >
-                  Description
+                 Mô tả
                 </h6>
                 <h6
                   className={`${tab === "rev" ? "active__tab" : ""}`}
@@ -174,7 +174,7 @@ const ProductDetails = () => {
                       ))}
                     </ul> */}
 
-                    <div className="review__form">
+                    {/* <div className="review__form">
                       <h4>Leave your experience</h4>
                       <form action="" onSubmit={submitHandler}>
                         <div className="form__group">
@@ -234,13 +234,13 @@ const ProductDetails = () => {
                           Submit
                         </motion.button>
                       </form>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               )}
             </div>
             <div className="col-lg-12 mt-5">
-              <h2 className="related__title">You might also like</h2>
+              <h2 className="related__title">Bạn cũng có thể thích</h2>
             </div>
             <ProductList data={relatedProducts} />
           </div>

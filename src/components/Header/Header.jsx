@@ -1,8 +1,10 @@
 import React, { useRef, useEffect } from "react";
+
 import { Navigate, NavLink, useNavigate } from "react-router-dom";
 import "./header.css";
+
 import { motion } from "framer-motion";
-import logo from "../../assets/images/eco-logo.png";
+import logo from "../../assets/images/logo.jpg";
 import userIcon from "../../assets/images/profile-picture.png";
 import { useSelector } from "react-redux";
 import useAuth from "../../custom-hooks/useAuth";
@@ -14,7 +16,7 @@ import { toast } from "react-toastify";
 const nav__links = [
   {
     path: "home",
-    display: "Home",
+    display: "Trang chủ",
   },
   {
     path: "shop",
@@ -22,11 +24,7 @@ const nav__links = [
   },
   {
     path: "cart",
-    display: "Cart",
-  },
-  {
-    path: "order",
-    display: "Order",
+    display: "Giỏ hàng",
   },
 ];
 
@@ -86,7 +84,7 @@ const Header = () => {
             <div className="logo">
               <img src={logo} alt="logo" />
               <div>
-                <h1>Multimart</h1>
+                <h1>PetShop</h1>
               </div>
             </div>
             <div className="navigation" ref={menuRef} onClick={menuToggle}>

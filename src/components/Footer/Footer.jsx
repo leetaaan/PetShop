@@ -12,44 +12,44 @@ const Footer = () => {
         <div className='mb-4 col-lg-5 col-12'>
           <div className="logo">
             <div>
-              <h1 className='text-white'>Multimart</h1>
+              <h1 className='text-white'>PetShop</h1>
             </div>
           </div>
           <p className="footer__text mt-4">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam, officiis numquam suscipit sed autem minima et est deleniti. Itaque, nostrum.
+          Caring for pets takes time, effort, and patience. However, it is a responsibility that we must take on when we get a pet. Love and care for your pet well so that they can stay healthy and happy.
           </p>
         </div>
         <div className='mb-4 col-lg-2 col-sm-6'>
           <div className="footer__quick-links">
-            <h4 className="quick__links-title">All Categories</h4>
+            <h4 className="quick__links-title">Danh mục</h4>
             <ListGroup className='mb-3'>
               <ListGroupItem className='ps-0 border-0'>
-                <Link to='#'>Mobile Phones</Link>
+                <Link to='#'>Chó cảnh</Link>
               </ListGroupItem>
               <ListGroupItem className='ps-0 border-0'>
-                <Link to='#'>Modern Sofa</Link>
+                <Link to='#'>Mèo cảnh</Link>
               </ListGroupItem>
               <ListGroupItem className='ps-0 border-0'>
-                <Link to='#'>Arm Chair</Link>
+                <Link to='#'>Đồ cho chó</Link>
               </ListGroupItem>
               <ListGroupItem className='ps-0 border-0'>
-                <Link to='#'>Smart Watches</Link>
+                <Link to='#'>Đồ cho mèo</Link>
               </ListGroupItem>
             </ListGroup>
           </div>
         </div>
         <div className='mb-4 col-lg-2 col-sm-6'>
         <div className="footer__quick-links">
-            <h4 className="quick__links-title">Usefull Links</h4>
+            <h4 className="quick__links-title">Mục lục</h4>
             <ListGroup className='mb-3'>
               <ListGroupItem className='ps-0 border-0'>
                 <Link to='/shop'>Shop</Link>
               </ListGroupItem>
               <ListGroupItem className='ps-0 border-0'>
-                <Link to='/cart'>Cart</Link>
+                <Link to='/cart'>Giỏ hàng</Link>
               </ListGroupItem>
               <ListGroupItem className='ps-0 border-0'>
-                <Link to='/login'>Login</Link>
+                <Link to='/login'>Đăng nhập</Link>
               </ListGroupItem>
               <ListGroupItem className='ps-0 border-0'>
                 <Link to='#'>Privacy Policy</Link>
@@ -59,7 +59,7 @@ const Footer = () => {
         </div>
         <div className='mb-4 col-lg-3'>
           <div className="footer__quick-links">
-            <h4 className="quick__links-title">Contanct</h4>
+            <h4 className="quick__links-title">Liên hệ</h4>
             <ListGroup className='footer__contact mb-3'>
               <ListGroupItem className='ps-0 border-0 d-flex align-items-center gap-2'>
                 <span><i class="ri-map-pin-line"></i></span>
@@ -77,7 +77,7 @@ const Footer = () => {
           </div>
         </div>
         <div className='col-12'>
-          <p className="footer__copyright">Copyright {year} developed by Anurag Sanadhya. All rights reserved.</p>
+          <p className="footer__copyright">Copyright {year} developed by TS & TL. All rights reserved.</p>
         </div>
       </div>
     </div>

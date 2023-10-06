@@ -18,50 +18,46 @@ const Checkout = () => {
         <div className="container">
           <div className="row">
             <div className="col-lg-8">
-              <h6 className="mb-4 fw-bold">Billing Information</h6>
+              <h6 className="mb-4 fw-bold">Thông tin hóa đơn</h6>
               <form className="billing__form">
                 <div className="form__group">
-                  <input type="text" placeholder="Enter your name" />
+                  <input type="text" placeholder="Nhập tên của bạn" />
                 </div>
 
                 <div className="form__group">
-                  <input type="email" placeholder="Enter your email" />
+                  <input type="email" placeholder="Nhập địa chỉ Email" />
                 </div>
 
                 <div className="form__group">
-                  <input type="number" placeholder="Phone number" />
+                  <input type="number" placeholder="Nhập số điện thoại" />
                 </div>
 
                 <div className="form__group">
-                  <input type="text" placeholder="Street address" />
+                  <input type="text" placeholder="Địa chỉ nhà" />
                 </div>
 
                 <div className="form__group">
-                  <input type="text" placeholder="City" />
+                  <input type="text" placeholder="Thành phố" />
                 </div>
 
                 <div className="form__group">
-                  <input type="text" placeholder="Postal Code" />
-                </div>
-
-                <div className="form__group">
-                  <input type="text" placeholder="Country" />
+                  <input type="text" placeholder="Tỉnh" />
                 </div>
               </form>
             </div>
             <div className="col-lg-4 col-md-6">
               <div className="checkout__cart">
                 <h6>
-                  Total Qty: <span>{totalQty} items</span>
+                 Tổng số lượng: <span>{totalQty}</span>
                 </h6>
                 <h6>
-                  Subtotal: <span>₹{totalAmt}</span>
+                  Giá tiền: <span>{totalAmt} Đ</span>
                 </h6>
                 <h6>
-                  Shipping: <br /> Free Shipping <span>₹0</span>
+                  Phí giao hàng: <br /> Miễn phí <span>0 Đ</span>
                 </h6>
                 <h4 className="mt-3">
-                  Total Cost: <span>₹{totalAmt}</span>
+                  Tổng tiền: <span>{totalAmt} Đ</span>
                 </h4>
                 <Link to="/">
                   <motion.button
@@ -69,7 +65,7 @@ const Checkout = () => {
                     className="buy__btn auth__btn w-100"
                   >
                     {/* Place an order */}
-                      Place Order
+                      Đặt hàng
                   </motion.button>
                 </Link>
               </div>
