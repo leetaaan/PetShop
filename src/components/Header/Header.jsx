@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 
 import { Navigate, NavLink, useNavigate } from "react-router-dom";
-import "./Header.css";
+import "./header.css";
 
 import { motion } from "framer-motion";
 import logo from "../../assets/images/logo.jpg";

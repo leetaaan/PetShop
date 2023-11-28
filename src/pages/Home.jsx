@@ -117,7 +117,7 @@ const Home = () => {
             <div className="col-md-6 col-sm-12" lg="6" md="12">
               <div className="clock__top-content">
                 <h4 className="text-white fs-6">Ưu đãi giới hạn</h4>
-                <h3 className="text-white fs-5 mt-2">Chó con chất lượng</h3>
+                <h3 className="text-white fs-5 mt-2">Chó con thuần chủng</h3>
               </div>
               <Clock />
               <motion.button
