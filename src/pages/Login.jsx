@@ -1,73 +1,87 @@
-import React, { useState } from 'react'
-import Helmet from '../components/Helmet/Helmet'
-import { Container, Row, Col, Form, FormGroup } from 'reactstrap'
-import { Link, useNavigate } from 'react-router-dom'
+import React, { useState } from "react";
+import "../styles/login.css";
+import Helmet from "../components/Helmet/Helmet";
+import { Link, useNavigate } from "react-router-dom";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase.config";
+import { toast } from "react-toastify";
 
-import { signInWithEmailAndPassword } from 'firebase/auth'
-import { auth } from '../firebase.config'
-import { toast } from 'react-toastify'
-
-import '../styles/login.css'
+import { motion } from "framer-motion";
 
 const Login = () => {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [loading, setLoading] = useState(false)
-
-  const navigate = useNavigate()
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const signIn = async (e) => {
-    e.preventDefault()
-    setLoading(true)
+    e.preventDefault();
+    setLoading(true);
 
     try {
-      const userCredential = await signInWithEmailAndPassword(auth, email, password)
-      const user = userCredential.user
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      const user = userCredential.user;
 
-      console.log(user)
-      setLoading(false)
-      toast.success('Đăng nhập thành công')
-      navigate('/checkout')
-
+      console.log(user);
+      setLoading(false);
+      toast.success("Đăng nhập thành công");
+      navigate("/checkout");
     } catch (error) {
-      setLoading(false)
-      toast.error(error.message)
+      setLoading(false);
+      toast.error("Đăng nhập không thành công");
     }
-  }
+  };
 
+  return (
+    <Helmet title="Login">
+      <div className="container">
+        <div className="row">
+          {loading ? (
+            <div className="col-lg-12 text-center h-100">
+              <h6>Đang tải...</h6>
+            </div>
+          ) : (
+            <div className="col-lg-6 m-auto mt-5 mb-5 text-center">
+              <h3 className="fw-bold mt-3 mb-4">Đăng nhập</h3>
+              <form action="" className="auth__form" onSubmit={signIn}>
+                <div className="form__group">
+                  <input
+                    type="email"
+                    placeholder="Nhập Email của bạn"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </div>
+                <div className="form__group">
+                  <input
+                    type="password"
+                    placeholder="Nhập mật khẩu của bạn"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                </div>
+                <motion.button
+                  whileTap={{ scale: 0.9 }}
+                  type="submit"
+                  className="buy__btn auth__btn mb-3"
+                >
+                  Đăng nhập
+                </motion.button>
+                <p>
+                  Chưa có tài khoản?{" "}
+                  <Link to="/signup">Tạo tài khoản</Link>
+                </p>
+              </form>
+            </div>
+          )}
+        </div>
+      </div>
+    </Helmet>
+  );
+};
 
-
-  return <Helmet titel="Login">
-    <section>
-      <Container>
-        <Row>
-          {
-            loading ? (
-              <Col lg='12' className='text-center'><h5 className='fw-bold'>Loading..........</h5></Col>
-            ) : (
-              <Col lg='6' className='m-auto text-center'>
-                <h3 className='fw-bold mb-4'>Đăng nhập</h3>
-                <Form className='auth_form' onSubmit={signIn}>
-                  <FormGroup className='form_group'>
-                    <input type="email" placeholder='Nhập email của bạn'
-                      value={email} onChange={(e) => setEmail(e.target.value)} />
-                  </FormGroup>
-                  <FormGroup className='form_group'>
-                    <input type="password" placeholder='Nhập mật khẩu của bạn'
-                      value={password} onChange={(e) => setPassword(e.target.value)} />
-                  </FormGroup>
-                  <button type="submit" className="login_btn auth_btn">Login</button>
-                  <p>
-                    Không có tài khoản? {''}
-                    <Link to='/signup'>Tạo tài khoản</Link>
-                  </p>
-                </Form>
-              </Col>
-            )}
-        </Row>
-      </Container>
-    </section>
-  </Helmet>
-}
-
-export default Login
+export default Login;

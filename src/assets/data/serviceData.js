@@ -1,26 +1,26 @@
 const serviceData = [
   {
     icon: "ri-truck-line",
-    title: "Free Shipping",
-    subtitle: "Lorem ipsum dolor sit amet.",
+    title: "Miễn phí vận chuyển",
+    subtitle: "PetShop miễn phí vận chuyển.",
     bg: "#fdefe6",
   },
   {
     icon: "ri-refresh-line",
-    title: "Easy Returns",
-    subtitle: "Lorem ipsum dolor sit amet.",
+    title: "Đổi trả dễ dàng",
+    subtitle: "Đổi trả theo chính sách của hàng.",
     bg: "#ceebe9",
   },
   {
     icon: "ri-secure-payment-line",
-    title: "Secure Payment",
-    subtitle: "Lorem ipsum dolor sit amet.",
+    title: "Thanh toán an toàn",
+    subtitle: "Bảo mật thanh toán của khách hàng.",
     bg: "#e2f2b2",
   },
   {
     icon: "ri-exchange-dollar-line",
-    title: " Back Guarantee",
-    subtitle: "Lorem ipsum dolor sit amet.",
+    title: "Chào đón quay lại",
+    subtitle: "Với các ưu đãi hấp dẫn, bất ngờ.",
     bg: "#d6e5fb",
   },
 ];

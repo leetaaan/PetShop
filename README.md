@@ -1,2 +1,2 @@
 # PetShop
-Made by TS and LT
+Made by TS and TL

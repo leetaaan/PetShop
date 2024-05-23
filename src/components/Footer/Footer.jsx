@@ -4,99 +4,83 @@ import { Container, Row, Col, ListGroup, ListGroupItem } from 'reactstrap'
 import { Link } from 'react-router-dom'
 
 const Footer = () => {
-  const year = new Date().getFullYear()
+  const year = new Date().getFullYear();
+
   return <footer className='footer'>
-    <Container>
-      <Row>
-        <Col lg = '4' className='mb-4' md='6'>
+    <div className='container'>
+      <div className='row'>
+        <div className='mb-4 col-lg-5 col-12'>
           <div className="logo">
             <div>
-              <h1 className='text-white'>Multimart</h1>
+              <h1 className='text-white'>PetShop</h1>
             </div>
           </div>
           <p className="footer__text mt-4">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Molestiae quisquam incidunt ipsam? Aspernatur saepe maiores, 
-              magnam nemo et nostrum molestiae animi mollitia labore laudantium 
-              adipisci unde cumque a ducimus tempora.
+          Chăm sóc thú cưng cần có thời gian, công sức và sự kiên nhẫn. Tuy nhiên, đó là trách nhiệm mà chúng ta phải đảm nhận khi nuôi thú cưng. Hãy yêu thương và chăm sóc thú cưng của bạn thật tốt để chúng luôn khỏe mạnh và vui vẻ.
           </p>
-        </Col>
-
-        <Col lg = '3' md='3' className='mb-4'>
+        </div>
+        <div className='mb-4 col-lg-2 col-sm-6'>
           <div className="footer__quick-links">
-            <h4 className="quick__links-title">Top Categories</h4>
+            <h4 className="quick__links-title">Danh mục</h4>
             <ListGroup className='mb-3'>
               <ListGroupItem className='ps-0 border-0'>
-                <Link to = '#'>Mobile Phones</Link>
+                <Link to='#'>Chó cảnh</Link>
               </ListGroupItem>
-
               <ListGroupItem className='ps-0 border-0'>
-                <Link to = '#'>Modern Sofa</Link>
+                <Link to='#'>Mèo cảnh</Link>
               </ListGroupItem>
-
               <ListGroupItem className='ps-0 border-0'>
-                <Link to = '#'>Arm Chair</Link>
+                <Link to='#'>Sản phẩm cho chó</Link>
               </ListGroupItem>
-
               <ListGroupItem className='ps-0 border-0'>
-                <Link to = '#'>Smart Watches</Link>
+                <Link to='#'>Sản phẩm cho mèo</Link>
               </ListGroupItem>
             </ListGroup>
           </div>
-        </Col>
-
-        <Col lg = '2' md='3' className='mb-4'>
+        </div>
+        <div className='mb-4 col-lg-2 col-sm-6'>
         <div className="footer__quick-links">
-            <h4 className="quick__links-title">Useful Links</h4>
+            <h4 className="quick__links-title">Mục lục</h4>
             <ListGroup className='mb-3'>
               <ListGroupItem className='ps-0 border-0'>
-                <Link to = '/shop'>Shop</Link>
+                <Link to='/shop'>Shop</Link>
               </ListGroupItem>
-
               <ListGroupItem className='ps-0 border-0'>
-                <Link to = '/cart'>Cart</Link>
+                <Link to='/cart'>Giỏ hàng</Link>
               </ListGroupItem>
-
               <ListGroupItem className='ps-0 border-0'>
-                <Link to = '/login'>Login</Link>
+                <Link to='/login'>Đăng nhập</Link>
               </ListGroupItem>
-
               <ListGroupItem className='ps-0 border-0'>
-                <Link to = '#'>Privacy Policy</Link>
+                <Link to='#'>Privacy Policy</Link>
               </ListGroupItem>
             </ListGroup>
           </div>
-        </Col>
-
-        <Col lg = '3' md='4'>
-        <div className="footer__quick-links">
-            <h4 className="quick__links-title">Contact</h4>
-            <ListGroup className='footer__contact'>
+        </div>
+        <div className='mb-4 col-lg-3'>
+          <div className="footer__quick-links">
+            <h4 className="quick__links-title">Liên hệ</h4>
+            <ListGroup className='footer__contact mb-3'>
               <ListGroupItem className='ps-0 border-0 d-flex align-items-center gap-2'>
                 <span><i class="ri-map-pin-line"></i></span>
-                <p>123, Dalat, LamDong</p>
+                <p>1 Phù Đổng Thiên Vương - Đà Lạt</p>
               </ListGroupItem>
-
               <ListGroupItem className='ps-0 border-0 d-flex align-items-center gap-2'>
                 <span><i class="ri-phone-line"></i></span>
-                <p>0987654321</p>
+                <p>+12345678</p>
               </ListGroupItem>
-
               <ListGroupItem className='ps-0 border-0 d-flex align-items-center gap-2'>
                 <span><i class="ri-mail-line"></i></span>
                 <p>example123@gmail.com</p>
-              </ListGroupItem>
+              </ListGroupItem>              
             </ListGroup>
           </div>
-        </Col>
-
-        <Col lg='12'>
-          <p className="footer__copyright">
-            Copyright {year} developer by TL and TS. All rights reserved.
-          </p>
-        </Col>
-      </Row>
-    </Container>
+        </div>
+        <div className='col-12'>
+          <p className="footer__copyright">Copyright {year} developed by TS & TL. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
   </footer>
 }
 

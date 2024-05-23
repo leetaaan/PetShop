@@ -1,21 +1,30 @@
-.common_section{
-    background: linear-gradient(rgba(0,0,0,0.562),rgba(0, 0, 0, 0.562)),url('../assets/images/bedroom.jpg') no-repeat center center;
+.common__section {
+    /* background-color: aqua; */
+    background-image: url('../assets/images/pexels-snapwire-46024.jpg');
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     padding: 100px 0px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.common_section h1{
+
+.common__section div {
+    background: linear-gradient(rgba(0, 0, 0, 0.244), rgba(0, 0, 0, 0.562));
+}
+
+.common__section h1 {
     color: #fff;
     font-weight: 600;
 }
 
-@media only screen and (max-width:768px) {
-    .common_section{
-        padding: 70px 0px;
+@media only screen and (max-width: 768px) {
+    .common__section {
+        padding: 70px 0;
     }
-    .common_section h1 {
+
+    .common__section h1 {
         font-size: 1.4rem;
     }
 }

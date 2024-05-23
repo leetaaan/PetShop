@@ -1,61 +1,80 @@
-import React from 'react'
-import { Container, Row, Col, Form, FormGroup } from 'reactstrap'
-import Helmet from '../components/Helmet/Helmet'
-import CommonSection from '../components/UI/CommonSection'
-import '../styles/checkout.css'
-import { useSelector } from 'react-redux'
+import React from "react";
+import "../styles/checkout.css";
+import Helmet from "../components/Helmet/Helmet";
+import CommonSection from "../components/UI/CommonSection";
+import { useSelector } from "react-redux";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 
 const Checkout = () => {
-  const totalQty = useSelector(state=>state.cart.totalQuantity)
-  const totalAmount = useSelector(state=>state.cart.totalAmount)
+  const totalQty = useSelector((state) => state.cart.totalQuantity);
+  const totalAmt = useSelector((state) => state.cart.totalAmount);
+
   return (
     <Helmet title="Checkout">
-      <CommonSection title="Checkout"/>
-        <section>
-          <Container>
-            <Row>
-              <Col lg='8'>
-                <h6 className='mb-4 fw-bold'>Thông tin hóa đơn</h6>
-                <Form className='billing_group'>
-                  <FormGroup className="form_group">
-                    <input type="text" placeholder='Nhập họ tên của bạn' />
-                  </FormGroup>
-                  <FormGroup className="form_group">
-                    <input type="email" placeholder='Nhập email của bạn' />
-                  </FormGroup>
-                  <FormGroup className="form_group">
-                    <input type="number" placeholder='Nhập số điện thoại của bạn' />
-                  </FormGroup>
-                  <FormGroup className="form_group">
-                    <input type="text" placeholder='Nhập địa chỉ cụ thể của bạn' />
-                  </FormGroup>
-                </Form>
-              </Col>
-              <Col lg='4'>
-                <div className="checkout_cart">
-                  <h6>
-                    Số luong: <span>{totalQty} items</span>
-                    </h6>
-                  <h6>
-                    Subtotal: <span>{totalAmount} VND</span>
-                    </h6>
-                  <h6>
-                    <span>
-                      Shipping:<br />free shipping
-                      </span>
-                      <span>0</span>
-                    </h6>
-                  <h4>Tong tiền <span>{totalAmount} VND</span></h4>
-                  <button className="buy_btn auth__btn w-100">Place an order</button>
+      <CommonSection title="Checkout" />
+      <section>
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-8">
+              <h6 className="mb-4 fw-bold">Thông tin hóa đơn</h6>
+              <form className="billing__form">
+                <div className="form__group">
+                  <input type="text" placeholder="Nhập tên của bạn" />
                 </div>
-                
-              </Col>
-            </Row>
-          </Container>
-        </section>
-    </Helmet>
-  )
-}
 
-export default Checkout
+                <div className="form__group">
+                  <input type="email" placeholder="Nhập địa chỉ Email" />
+                </div>
+
+                <div className="form__group">
+                  <input type="number" placeholder="Nhập số điện thoại" />
+                </div>
+
+                <div className="form__group">
+                  <input type="text" placeholder="Địa chỉ nhà" />
+                </div>
+
+                <div className="form__group">
+                  <input type="text" placeholder="Thành phố" />
+                </div>
+
+                <div className="form__group">
+                  <input type="text" placeholder="Tỉnh" />
+                </div>
+              </form>
+            </div>
+            <div className="col-lg-4 col-md-6">
+              <div className="checkout__cart">
+                <h6>
+                 Tổng số lượng: <span>{totalQty}</span>
+                </h6>
+                <h6>
+                  Giá tiền: <span>{totalAmt} Đ</span>
+                </h6>
+                <h6>
+                  Phí giao hàng: <br /> Miễn phí <span>0 Đ</span>
+                </h6>
+                <h4 className="mt-3">
+                  Tổng tiền: <span>{totalAmt} Đ</span>
+                </h4>
+                <Link to="/">
+                  <motion.button
+                    whileTap={{ scale: 0.95 }}
+                    className="buy__btn auth__btn w-100"
+                  >
+                    {/* Place an order */}
+                      Đặt hàng
+                  </motion.button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </Helmet>
+  );
+};
+
+export default Checkout;
